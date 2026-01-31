@@ -6,10 +6,20 @@
     <title>Sleep Outside | Products</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/product-listing.js" type="module"></script>
+    <script src="../js/Sort.js" type="module"></script>
 </head>
 
 <body>
     <header class="divider" id="main-header"></header>
+     <section class="productSort">
+        <form method="GET" action="" id="sortForm">
+            <select name="sort" id="sortBy">
+                <option value="" disabled selected>-- Sort By --</option>
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+            </select>
+        </form>
+     </section>
     <main class="divider">
         <section class="products">
             <h2>Top Products: <span class="title highlight"></span></h2>

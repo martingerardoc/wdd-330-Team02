@@ -14,14 +14,24 @@ function productCardTemplate(product) {
 }
 
 export default class ProductList {
-  constructor(category, dataSource, listElement) {
+  // constructor(category, dataSource, listElement) {
+  //   this.category = category;
+  //   this.dataSource = dataSource;
+  //   this.listElement = listElement;
+  // }
+
+  //Add another parameter to the constructor to sort the data
+  constructor(category, dataSource, listElement, sortBy) {
     this.category = category;
     this.dataSource = dataSource;
     this.listElement = listElement;
+    this.sortBy = sortBy;
   }
 
   async init() {
-    const list = await this.dataSource.getData(this.category);
+    // const list = await this.dataSource.getData(this.category);
+    // Pass the Sort By parameter to the new getData function
+    const list = await this.dataSource.getData(this.category, this.sortBy);
     this.renderList(list);
     document.querySelector(".title").textContent = this.category;
   }

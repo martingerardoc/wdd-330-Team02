@@ -17,7 +17,7 @@
       <section class="checkout-form">
         <form name="checkout">
           <input type="hidden" name="orderDate" id="orderDate" />
-      
+
           <fieldset>
             <legend>Shipping</legend>
             <div class="checkout__name">
@@ -37,7 +37,7 @@
               <input type="text" name="zip" id="zip" required />
             </div>
           </fieldset>
-      
+
           <fieldset>
             <legend>Payment</legend>
             <div class="checkout__payment">
@@ -49,10 +49,10 @@
               <input type="text" name="code" id="code" required />
             </div>
           </fieldset>
-      
+
           <fieldset class="checkout-summary">
             <legend>Order Summary</legend>
-      
+
             <div class="order__summary">
               <!-- <div>Items</div>
                     <div id="num-items"></div>
@@ -66,7 +66,9 @@
                     <div id="orderTotal"></div> -->
               <ul>
                 <li>
-                  <label for="cartTotal">Item Subtotal(<span id="num-items"></span>)</label>
+                  <label for="cartTotal"
+                    >Item Subtotal(<span id="num-items"></span>)</label
+                  >
                   <p name="cartTotal" id="cartTotal"></p>
                 </li>
                 <li>
@@ -87,7 +89,6 @@
           <button type="submit" id="checkoutSubmit">Checkout</button>
         </form>
       </section>
-      
     </main>
 
     <footer id="main-footer"></footer>

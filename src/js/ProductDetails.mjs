@@ -25,6 +25,15 @@ export default class ProductDetails {
     cartItems.push(this.product);
     setLocalStorage("so-cart", cartItems);
     alertMessage(`${this.product.NameWithoutBrand} added to cart!`);
+
+    // Add the animation class
+    const cartHeader = document.querySelector('.cart');
+    cartHeader.classList.add('animate-cart');
+    // Add event listener and remove listener after animation finishes
+    cartHeader.addEventListener('animationend', () => {
+        cartHeader.classList.remove('animate-cart');
+    }, { once: true }); // To automatically remove the listener
+
   }
 
   renderProductDetails() {

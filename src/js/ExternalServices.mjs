@@ -4,11 +4,12 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error("Bad Response");
+    // throw new Error("Bad Response");
+    throw { name: "servicesError", message: data };
   }
 }
 
-export default class ProductData {
+export default class ExternalServices {
   constructor() {
     // this.category = category;
     // this.path = `../public/json/${this.category}.json`;
@@ -56,5 +57,15 @@ export default class ProductData {
     const data = await convertToJson(response);
     console.log(data.Result);
     return data.Result;
+  }
+  async checkout(payload) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    };
+    return await fetch(`${baseURL}checkout/`, options).then(convertToJson);
   }
 }
